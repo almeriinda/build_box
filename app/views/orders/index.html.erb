@@ -1,0 +1,447 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <%= csrf_meta_tags %>
+  <title>Sua Loja Online</title>
+  <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
+  <style>
+      body {
+          padding-top: 56px;
+      }
+      .navbar-custom {
+          display: flex;
+          justify-content: flex-end;
+          align-items: center;
+      }
+      .search-button {
+          margin-right: 10px;
+      }
+      .search-form {
+          width: 300px;
+          margin: auto;
+      }
+      .navbar-brand a {
+          font-size: 0.8rem;
+      }
+      .profile-icon {
+          margin-left: 10px;
+          font-size: 0.8rem;
+      }
+      .card-button {
+          background-color: #808080;
+          border-color: #808080;
+          color: #ffffff;
+      }
+      .card {
+          height: 100%;
+      }
+      .quantity-input {
+          margin-bottom: 10px;
+      }
+      .card-text {
+          font-size: 14px;
+      }
+      .checkbox-label {
+          margin-top: auto;
+          margin-bottom: 0;
+          font-size: 14px;
+      }
+      .card-footer {
+          padding: 0.75rem 1.25rem;
+          background-color: transparent;
+          border-top: 1px solid rgba(0,0,0,.125);
+      }
+      #finalizarCompraBtn {
+          background-color: #808080;
+          border-color: #808080;
+          color: #ffffff;
+          display: block;
+          margin: auto;
+      }
+      #confirmarCompraBtn{
+          background-color: #808080;
+          border-color: #808080;
+          color: #ffffff;
+      }
+  </style>
+</head>
+<body>
+<nav class="navbar navbar-expand navbar-dark bg-dark fixed-top">
+  <div class="container">
+    <div class="navbar-brand ml-auto">
+      <a> &#128187; Devise Informática </a>
+    </div>
+    <form class="form-inline my-2 my-lg-0 navbar-custom search-form">
+      <input class="form-control mr-sm-2" type="search" id="searchInput" placeholder="Pesquisar produtos" aria-label="Search">
+      <button class="btn btn-outline-light my-2 my-sm-0 search-button" type="button" onclick="searchProducts()"><i class="fas fa-search"></i></button>
+    </form>
+    <div class="navbar-brand ml-auto">
+      <a> &#128722; Carrinho </a>
+      <span class="profile-icon"><i class="fas fa-user"></i> Perfil</span>
+    </div>
+  </div>
+</nav>
+<div class="container mt-5">
+  <h2>Bem-vindo à nossa loja online!</h2>
+  <p>Confira nossos produtos incríveis.</p>
+  <div class="alert alert-info" role="alert">
+    <i class="fas fa-info-circle"></i> Para montar sua máquina, por favor, selecione um processador, uma placa mãe, pelo menos uma memória RAM e uma placa de vídeo.
+  </div>
+  <div class="row">
+    <div class="col-md-4">
+      <div class="card shadow">
+        <div class="card-body">
+          <h5 class="card-title">Processador</h5>
+          <p class="card-text">
+            <strong>Produto:</strong> Processador<br>
+            <strong>Processador:</strong> Core i5<br>
+            <strong>Marca:</strong> Intel
+          </p>
+        </div>
+        <div class="card-footer">
+          <div class="form-check">
+            <input class="form-check-input" type="checkbox" value="Core i5" id="buyCheckbox1">
+            <label class="form-check-label checkbox-label" for="buyCheckbox1">
+              Comprar
+            </label>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="col-md-4">
+      <div class="card shadow">
+        <div class="card-body">
+          <h5 class="card-title">Processador</h5>
+          <p class="card-text">
+            <strong>Produto:</strong> Processador<br>
+            <strong>Processador:</strong> Core i7<br>
+            <strong>Marca:</strong> Intel
+          </p>
+        </div>
+        <div class="card-footer">
+          <div class="form-check">
+            <input class="form-check-input" type="checkbox" value="Core i5" id="buyCheckbox1">
+            <label class="form-check-label checkbox-label" for="buyCheckbox1">
+              Comprar
+            </label>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="col-md-4">
+      <div class="card shadow">
+        <div class="card-body">
+          <h5 class="card-title">Processador</h5>
+          <p class="card-text">
+            <strong>Produto:</strong> Processador<br>
+            <strong>Processador:</strong> Ryzen 5<br>
+            <strong>Marca:</strong> AMD
+          </p>
+        </div>
+        <div class="card-footer">
+          <div class="form-check">
+            <input class="form-check-input" type="checkbox" value="Core i5" id="buyCheckbox1">
+            <label class="form-check-label checkbox-label" for="buyCheckbox1">
+              Comprar
+            </label>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+  <div class="row mt-3">
+    <div class="col-md-4">
+      <div class="card shadow">
+        <div class="card-body">
+          <h5 class="card-title">Processador</h5>
+          <p class="card-text">
+            <strong>Produto:</strong> Processador<br>
+            <strong>Processador:</strong> Ryzen 7<br>
+            <strong>Marca:</strong> AMD
+          </p>
+        </div>
+        <div class="card-footer">
+          <div class="form-check">
+            <input class="form-check-input" type="checkbox" value="Core i5" id="buyCheckbox1">
+            <label class="form-check-label checkbox-label" for="buyCheckbox1">
+              Comprar
+            </label>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="col-md-4">
+      <div class="card shadow">
+        <div class="card-body">
+          <h5 class="card-title">Placa Mãe</h5>
+          <p class="card-text">
+            <strong>Produto:</strong>Placa Mãe<br>
+            <strong>Asus ROG</strong><br>
+            <strong>Processadores suportados:</strong> Intel<br>
+            <strong>Qtde. slots de memória RAM:</strong> 2<br>
+            <strong>Total de memória RAM suportado:</strong> Até 16 GB<br>
+            <strong>Vídeo Integrado:</strong> Não
+          </p>
+        </div>
+        <div class="card-footer">
+          <div class="form-check">
+            <input class="form-check-input" type="checkbox" value="Asus ROG" id="buyCheckbox2">
+            <label class="form-check-label checkbox-label" for="buyCheckbox2">
+              Comprar
+            </label>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="col-md-4">
+      <div class="card shadow">
+        <div class="card-body">
+          <h5 class="card-title">Placa Mãe</h5>
+          <p class="card-text">
+            <strong>Produto:</strong>Placa Mãe<br>
+            <strong>Gigabyte Aorus</strong><br>
+            <strong>Processadores suportados:</strong> Intel<br>
+            <strong>Qtde. slots de memória RAM:</strong> 2<br>
+            <strong>Total de memória RAM suportado:</strong> Até 16 GB<br>
+            <strong>Vídeo Integrado:</strong> Não
+          </p>
+        </div>
+        <div class="card-footer">
+          <div class="form-check">
+            <input class="form-check-input" type="checkbox" value="Asus ROG" id="buyCheckbox2">
+            <label class="form-check-label checkbox-label" for="buyCheckbox2">
+              Comprar
+            </label>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+  <div class="row mt-3">
+    <div class="col-md-4">
+      <div class="card shadow">
+        <div class="card-body">
+          <h5 class="card-title">Placa Mãe</h5>
+          <p class="card-text">
+            <strong>Produto:</strong>Placa Mãe<br>
+            <strong>ASRock Steel Legend</strong><br>
+            <strong>Processadores suportados:</strong> Intel e AMD<br>
+            <strong>Qtde. slots de memória RAM:</strong> 2<br>
+            <strong>Total de memória RAM suportado:</strong> Até 16 GB<br>
+            <strong>Vídeo Integrado:</strong> Não
+          </p>
+        </div>
+        <div class="card-footer">
+          <div class="form-check">
+            <input class="form-check-input" type="checkbox" value="Asus ROG" id="buyCheckbox2">
+            <label class="form-check-label checkbox-label" for="buyCheckbox2">
+              Comprar
+            </label>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="col-md-4">
+      <div class="card shadow">
+        <div class="card-body">
+          <h5 class="card-title">Memória RAM</h5>
+          <p class="card-text">
+            <strong>Produto:</strong> Memória RAM <br>
+            <strong>Memória:</strong> Kingston Hiper X<br>
+            <strong>Tamanhos disponíveis:</strong> 4 GB, 8 GB, 16 GB, 32 GB, 64 GB
+          </p>
+        </div>
+        <div class="card-footer">
+          <div class="form-check">
+            <input class="form-check-input" type="checkbox" value="Kingston Hiper X" id="buyCheckbox3">
+            <label class="form-check-label checkbox-label" for="buyCheckbox3">
+              Comprar
+            </label>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="col-md-4">
+      <div class="card shadow">
+        <div class="card-body">
+          <h5 class="card-title">Placa de Vídeo</h5>
+          <p class="card-text">
+            <strong>Produto:</strong> Placa de Vídeo<br>
+            <strong>Configs:</strong> Evga Geforce RTX 2060 6GB
+          </p>
+        </div>
+        <div class="card-footer">
+          <div class="form-check">
+            <input class="form-check-input" type="checkbox" value="Evga Geforce RTX 2060 6GB" id="buyCheckbox4">
+            <label class="form-check-label checkbox-label" for="buyCheckbox4">
+              Comprar
+            </label>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+  <div class="row mt-3">
+    <div class="col-md-4">
+      <div class="card shadow">
+        <div class="card-body">
+          <h5 class="card-title">Placa de Vídeo</h5>
+          <p class="card-text">
+            <strong>Produto:</strong> Placa de Vídeo<br>
+            <strong>Configs:</strong> Asus ROG Strix Geforce RTX 3060 6GB
+          </p>
+        </div>
+        <div class="card-footer">
+          <div class="form-check">
+            <input class="form-check-input" type="checkbox" value="Asus ROG Strix Geforce RTX 3060 6GB" id="buyCheckbox5">
+            <label class="form-check-label checkbox-label" for="buyCheckbox5">
+              Comprar
+            </label>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="col-md-4">
+      <div class="card shadow">
+        <div class="card-body">
+          <h5 class="card-title">Placa de Vídeo</h5>
+          <p class="card-text">
+            <strong>Produto:</strong> Placa de Vídeo<br>
+            <strong>Configs:</strong> Gigabyte Radeon RX 6600 XT EAGLE 8GB
+          </p>
+        </div>
+        <div class="card-footer">
+          <div class="form-check">
+            <input class="form-check-input" type="checkbox" value="Gigabyte Radeon RX 6600 XT EAGLE 8GB" id="buyCheckbox6">
+            <label class="form-check-label checkbox-label" for="buyCheckbox6">
+              Comprar
+            </label>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+  <button type="button" class="btn btn-primary mt-3" id="finalizarCompraBtn" data-toggle="modal" data-target="#modalFinalizarCompra">
+    Finalizar Compra
+  </button>
+  <!-- Modal -->
+  <div class="modal fade" id="modalFinalizarCompra" tabindex="-1" role="dialog" aria-labelledby="modalFinalizarCompraLabel" aria-hidden="true">
+    <div class="modal-dialog" role="document">
+      <div class="modal-content">
+        <div class="modal-header">
+          <h5 class="modal-title" id="modalFinalizarCompraLabel">Produtos Selecionados</h5>
+          <button type="button" class="close" data-dismiss="modal" aria-label="Fechar">
+            <span aria-hidden="true">&times;</span>
+          </button>
+        </div>
+        <div class="modal-body" id="produtosSelecionados">
+          <ul id="listaProdutos"></ul>
+          <p id="mensagemNenhumProduto" style="display:none;">Nenhum produto selecionado.</p>
+        </div>
+        <div class="modal-footer">
+          <button type="button" class="btn btn-secondary" data-dismiss="modal">Fechar</button>
+          <button type="button" class="btn btn-primary" id="confirmarCompraBtn">Realizar pagamento</button>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.5.4/dist/umd/popper.min.js"></script>
+  <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+
+  <script>
+      function updateSelectedProducts() {
+          var checkboxes = document.querySelectorAll('input[type="checkbox"]:checked');
+          var modalBody = document.getElementById('listaProdutos');
+          var mensagemNenhumProduto = document.getElementById('mensagemNenhumProduto');
+
+          modalBody.innerHTML = '';
+
+          if (checkboxes.length > 0) {
+              checkboxes.forEach(function(checkbox) {
+                  var productName = checkbox.closest('.card').querySelector('.card-title').textContent.trim();
+                  var listItem = document.createElement('li');
+                  listItem.textContent = productName;
+                  modalBody.appendChild(listItem);
+              });
+              mensagemNenhumProduto.style.display = 'none';
+          } else {
+              mensagemNenhumProduto.style.display = 'block';
+          }
+
+          $('#modalFinalizarCompra').modal('show');
+      }
+
+      document.getElementById('finalizarCompraBtn').addEventListener('click', function() {
+          updateSelectedProducts();
+      });
+
+      document.addEventListener('DOMContentLoaded', function() {
+          document.getElementById('confirmarCompraBtn').addEventListener('click', function() {
+              var selected_product_names = [];
+
+              document.querySelectorAll('input[type="checkbox"]:checked').forEach(function(checkbox) {
+                  var productName = checkbox.closest('.card').querySelector('.card-title').textContent.trim();
+                  selected_product_names.push(productName);
+              });
+
+              if (selected_product_names.length === 0) {
+                  alert('Nenhum produto selecionado. Por favor, selecione pelo menos um produto antes de continuar.');
+                  return;
+              }
+
+              var requestData = {
+                  order: {
+                      selected_product_names: selected_product_names
+                  }
+              };
+
+              fetch('/orders/create', {
+                  method: 'POST',
+                  headers: {
+                      'Content-Type': 'application/json',
+                      'X-CSRF-Token': document.querySelector('meta[name="csrf-token"]').getAttribute('content')
+                  },
+                  body: JSON.stringify(requestData)
+              })
+                  .then(function(response) {
+                      if (!response.ok) {
+                          throw new Error('Erro ao processar o pagamento');
+                      }
+                      alert('Pagamento realizado com sucesso!');
+                  })
+                  .catch(function(error) {
+                      alert('Erro ao processar o pagamento: ' + error.message);
+                  });
+          });
+      });
+
+      $('#modalFinalizarCompra').on('show.bs.modal', function (e) {
+          updateSelectedProducts();
+      });
+
+      function searchProducts() {
+          var searchInput = document.getElementById('searchInput').value.toLowerCase();
+          var cards = document.querySelectorAll('.card');
+
+          cards.forEach(function(card) {
+              var cardTitle = card.querySelector('.card-title').textContent.toLowerCase();
+              if (cardTitle.includes(searchInput)) {
+                  card.style.display = 'block';
+              } else {
+                  card.style.display = 'none';
+              }
+          });
+      }
+
+      document.getElementById('searchInput').addEventListener('search', function() {
+          if (this.value === '') {
+              window.location.reload();
+          }
+      });
+  </script>
+</div>
+</body>
+</html>

@@ -1,0 +1,22 @@
+default: &default
+  adapter: postgresql
+  encoding: unicode
+  username: postgres
+  password: 123456
+  host: localhost
+  port: 5432
+
+
+development:
+  <<: *default
+  database: custom_pc_builder_development
+
+test:
+  <<: *default
+  database: custom_pc_builder_test
+
+production:
+  <<: *default
+  database: custom_pc_builder_production
+  username: custom_pc_builder
+  password: <%= ENV["CUSTOM_PC_BUILDER_DATABASE_PASSWORD"] %>
